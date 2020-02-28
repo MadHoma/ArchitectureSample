@@ -16,4 +16,16 @@
         <item name="android:maxLines">1</item>
     </style>
 
+
+    <style name="TextVerticalSeparator">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/text</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:lines">1</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:background">@color/bg_text_separator</item>
+    </style>
+
+
 </resources>

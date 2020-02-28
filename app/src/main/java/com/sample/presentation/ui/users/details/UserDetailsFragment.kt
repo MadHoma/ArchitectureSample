@@ -19,6 +19,7 @@ class UserDetailsFragment : BaseFragment(), UserDetailsView {
 
     override fun initUI() {
         mPresenter.setArguments(arguments)
+        btnBack.setOnClickListener { mPresenter.onBack() }
     }
 
     @SuppressLint("SetTextI18n")
@@ -26,7 +27,7 @@ class UserDetailsFragment : BaseFragment(), UserDetailsView {
         ivPhoto.setImageCircleFromUrl(user.picture.large)
         tvTitle.text = "${user.name.title}. ${user.name.first}"
         tvName.text = "${user.name.first} ${user.name.last}"
-        tvAge.text = user.dob.age
+        tvAge.text = "Age: ${user.dob.age}"
 
         tvEmail.text = user.email
         tvPhone.text = user.phone

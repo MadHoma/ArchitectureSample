@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#052F3F</color>
-    <color name="colorPrimaryDark">#080E20</color>
+    <color name="colorPrimaryDark">#202124</color>
     <color name="colorAccent">#3E4EB8</color>
-    <color name="bg">#0E162C</color>
+    <color name="bg">#202124</color>
+    <color name="bg_text_separator">#2D3233</color>
 
     <color name="text">#ACACAC</color>
-    <color name="navigation">#080E20</color>
+    <color name="navigation">#2d2e30</color>
 </resources>

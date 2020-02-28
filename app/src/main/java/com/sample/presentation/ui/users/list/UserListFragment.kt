@@ -25,6 +25,8 @@ class UserListFragment : BaseFragment(), UserListView {
             )
         }
         mPresenter.load()
+        btnUsers.isEnabled = false
+        btnSettings.setOnClickListener {  }
     }
 
     override fun addList(list: List<User>) {
