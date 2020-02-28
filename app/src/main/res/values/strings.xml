@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Architecture Sample</string>
+    <string name="contact_information">Contact Information</string>
+    <string name="location">Location</string>
+</resources>
