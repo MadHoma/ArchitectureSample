@@ -4,6 +4,7 @@ import android.app.Application
 import com.google.gson.GsonBuilder
 import com.sample.data.local.ApiConstants
 import com.sample.data.network.UserService
+import com.sample.di.modules.networkModule
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
@@ -41,45 +42,6 @@ object DI {
 
 val appModule = module {
 
-}
-
-
-//==============================================================================================
-// *** Network ***
-//==============================================================================================
-
-const val CONNECTION_TIMEOUT = 30L
-
-val networkModule = module {
-
-    single { get<Retrofit>().create(UserService::class.java) }
-
-    single { GsonBuilder().create() }
-
-    single {
-        val okHttpClient = OkHttpClient.Builder().apply {
-            retryOnConnectionFailure(true)
-            readTimeout(CONNECTION_TIMEOUT, TimeUnit.SECONDS)
-            connectTimeout(CONNECTION_TIMEOUT, TimeUnit.SECONDS)
-            writeTimeout(CONNECTION_TIMEOUT, TimeUnit.SECONDS)
-            addInterceptor(
-                HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY }
-            )
-        }.build()
-
-        val build = Retrofit.Builder()
-            .baseUrl(ApiConstants.SERVER)
-            .client(okHttpClient)
-            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-            .addConverterFactory(
-                GsonConverterFactory.create(
-                    get()
-                )
-            )
-            .build()
-
-        build
-    }
 }
 
 //==============================================================================================

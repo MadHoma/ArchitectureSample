@@ -28,38 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/bottomNavigation"/>
-    <LinearLayout
-        android:id="@+id/bottomNavigation"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:orientation="horizontal"
-        android:background="@color/navigation"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
-        <ImageView
-            android:id="@+id/btnUsers"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/ic_users"
-            android:paddingTop="6dp"
-            android:clickable="false"
-            android:paddingBottom="6dp"
-            android:tint="@color/icon_nav"
-            tools:ignore="ContentDescription" />
-        <ImageView
-            android:id="@+id/btnSettings"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/ic_settings"
-            android:clickable="true"
-            android:paddingTop="6dp"
-            android:paddingBottom="6dp"
-            android:tint="@color/icon_nav"
-            tools:ignore="ContentDescription" />
-    </LinearLayout>
+  <include layout="@layout/bottom_navigation"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"

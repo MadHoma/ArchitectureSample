@@ -17,11 +17,9 @@ abstract class BaseActivity : MvpAppCompatActivity(),
     private val mNavigatorHolder: NavigatorHolder by inject()
     private var mNavigator: SupportAppNavigator? = null
 
-    @LayoutRes
-    protected abstract fun getLayoutRes(): Int
+    @LayoutRes protected abstract fun getLayoutRes(): Int
 
-    @IdRes
-    protected open fun getContainerRes(): Int = 0
+    @IdRes protected open fun getContainerRes(): Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

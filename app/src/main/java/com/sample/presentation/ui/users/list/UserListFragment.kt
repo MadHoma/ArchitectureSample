@@ -5,6 +5,7 @@ import com.sample.R
 import com.sample.data.model.user.User
 import com.sample.presentation.base.BaseFragment
 import com.sample.presentation.ui.users.adapter.UsersAdapter
+import kotlinx.android.synthetic.main.bottom_navigation.*
 import kotlinx.android.synthetic.main.fragment_user_list.*
 
 class UserListFragment : BaseFragment(), UserListView {
@@ -26,7 +27,7 @@ class UserListFragment : BaseFragment(), UserListView {
         }
         mPresenter.load()
         btnUsers.isEnabled = false
-        btnSettings.setOnClickListener {  }
+        btnSettings.setOnClickListener { mPresenter.openNasa() }
     }
 
     override fun addList(list: List<User>) {

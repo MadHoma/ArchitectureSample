@@ -32,4 +32,8 @@ class UserListPresenter : BasePresenter<UserListView>() {
     fun openDetails(user: User) {
         mRouter.navigateTo(Screens.UserDetailsScreen(user))
     }
+
+    fun openNasa(){
+        mRouter.newRootScreen(Screens.NasaScreen())
+    }
 }
