@@ -10,6 +10,11 @@ class MainPresenter : BasePresenter<MainView>() {
 
     private val mRoute: Router by inject()
 
+    override fun onFirstViewAttach() {
+        super.onFirstViewAttach()
+        mRoute.newRootScreen(Screens.UserListScreen())
+    }
+
     fun showStartFragment() {
         mRoute.newRootScreen(Screens.UserListScreen())
     }

@@ -67,4 +67,5 @@ dependencies {
 
     //other
     implementation 'com.jakewharton.timber:timber:4.7.1'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
 }

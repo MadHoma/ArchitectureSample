@@ -2,4 +2,8 @@
     <string name="app_name">Architecture Sample</string>
     <string name="contact_information">Contact Information</string>
     <string name="location">Location</string>
+    <string name="users">Users</string>
+    <string name="nasa">Nasa</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
 </resources>

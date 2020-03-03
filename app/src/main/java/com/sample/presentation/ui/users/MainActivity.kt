@@ -13,7 +13,6 @@ class MainActivity : BaseActivity(), MainView {
     override fun getLayoutRes() = R.layout.activity_frame
     override fun getContainerRes(): Int = R.id.content_frame
 
-    override fun initUI() {
-        mPresenter.showStartFragment()
-    }
+    override fun initUI() {}
+
 }

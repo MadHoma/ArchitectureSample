@@ -25,12 +25,24 @@ class UserListFragment : BaseFragment(), UserListView {
                 adapter.getItem(position) as User
             )
         }
-        mPresenter.load()
-        btnUsers.isEnabled = false
-        btnSettings.setOnClickListener { mPresenter.openNasa() }
+
+        mPresenter.load(rvUsers)
+        bottomNavigation.selectedItemId = R.id.navUsers
+        bottomNavigation.setOnNavigationItemSelectedListener {
+            if(it.itemId == R.id.navNasa)  mPresenter.openNasa()
+            return@setOnNavigationItemSelectedListener true
+        }
+
+        btnSignIn.setOnClickListener { mPresenter.openSignIn() }
+
+        swipeRefresh.setOnRefreshListener {
+            mUsersAdapter.setNewData(arrayListOf())
+            mPresenter.refresh()
+        }
     }
 
     override fun addList(list: List<User>) {
+        swipeRefresh.isRefreshing = false
         mUsersAdapter.addData(list)
     }
 

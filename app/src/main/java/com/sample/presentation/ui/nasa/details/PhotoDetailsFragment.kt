@@ -11,16 +11,6 @@ import kotlinx.android.synthetic.main.fragment_details.*
 
 class PhotoDetailsFragment : BaseFragment(), PhotoDetailsView {
 
-    companion object {
-
-        fun newInstance(item: PhotoItem): PhotoDetailsFragment {
-            val fragment = PhotoDetailsFragment()
-            val args = Bundle()
-            args.putParcelable(PHOTO_ITEM, item)
-            fragment.arguments = args
-            return fragment
-        }
-    }
 
     @InjectPresenter
     lateinit var mPresenter: PhotoDetailsPresenter
@@ -40,5 +30,14 @@ class PhotoDetailsFragment : BaseFragment(), PhotoDetailsView {
         }
     }
 
+    companion object {
 
+        fun newInstance(item: PhotoItem): PhotoDetailsFragment {
+            val fragment = PhotoDetailsFragment()
+            val args = Bundle()
+            args.putParcelable(PHOTO_ITEM, item)
+            fragment.arguments = args
+            return fragment
+        }
+    }
 }

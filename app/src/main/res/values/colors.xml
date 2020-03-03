@@ -6,6 +6,7 @@
     <color name="bg">#202124</color>
     <color name="bg_text_separator">#2D3233</color>
 
+    <color name="bg_edit">#51BBBBBB</color>
     <color name="text">#ACACAC</color>
     <color name="navigation">#2d2e30</color>
 </resources>

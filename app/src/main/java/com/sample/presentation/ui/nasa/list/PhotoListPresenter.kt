@@ -17,6 +17,10 @@ class PhotoListPresenter : BasePresenter<PhotoListView>() {
     private val mCommonService: CommonService by inject()
     private val mRouter: Router by inject()
 
+    override fun onFirstViewAttach() {
+        super.onFirstViewAttach()
+        loadData()
+    }
 
     fun loadData() {
         addDisposable(mCommonService.getMarsRoversPhotos("curiosity", 1000, "fhaz")
@@ -40,7 +44,7 @@ class PhotoListPresenter : BasePresenter<PhotoListView>() {
 
     fun openUsers() {
 
-        mRouter.newRootScreen(Screens.UsersScreen())
+        mRouter.newRootScreen(Screens.UserListScreen())
     }
 
 }

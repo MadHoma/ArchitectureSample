@@ -1,6 +1,5 @@
 package com.sample.presentation.ui.nasa.list
 
-import android.os.Bundle
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.arellomobile.mvp.presenter.InjectPresenter
@@ -13,15 +12,6 @@ import kotlinx.android.synthetic.main.fragment_list.*
 
 class PhotoListFragment : BaseFragment(), PhotoListView {
 
-    companion object {
-        fun newInstance(): PhotoListFragment {
-            val fragment = PhotoListFragment()
-            val args = Bundle()
-            fragment.arguments = args
-            return fragment
-        }
-    }
-
     @InjectPresenter
     lateinit var mPresenter: PhotoListPresenter
 
@@ -31,10 +21,11 @@ class PhotoListFragment : BaseFragment(), PhotoListView {
 
     override fun initUI() {
         initAdapter()
-
-        btnSettings.isEnabled = false
-        btnUsers.setOnClickListener { mPresenter.openUsers() }
-        mPresenter.loadData()
+        bottomNavigation.selectedItemId = R.id.navNasa
+        bottomNavigation.setOnNavigationItemSelectedListener {
+            if(it.itemId == R.id.navUsers)  mPresenter.openUsers()
+            return@setOnNavigationItemSelectedListener true
+        }
     }
 
     private fun initAdapter() {
@@ -51,4 +42,7 @@ class PhotoListFragment : BaseFragment(), PhotoListView {
         mAdapter?.setNewData(list)
     }
 
+    companion object {
+        fun newInstance() = PhotoListFragment()
+    }
 }
