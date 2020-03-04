@@ -22,7 +22,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/sign_in"
+        android:text="@string/sign_up"
         android:textColor="@color/orange"
         android:textAllCaps="true"
         android:layout_marginBottom="30dp"
@@ -39,16 +39,31 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="55dp"
         android:layout_marginEnd="55dp"
-        android:hint="@string/usernameOrEmail"
+        android:hint="@string/username"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@id/etPassword"
+        app:layout_constraintBottom_toTopOf="@id/etEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
         tools:ignore="LabelFor" />
 
+    <EditText
+        android:id="@+id/etEmail"
+        style="@style/EditTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_edit"
+        android:hint="@string/email"
+        android:importantForAutofill="no"
+        android:inputType="textWebEmailAddress"
+        app:layout_constraintBottom_toTopOf="@id/etPassword"
+        app:layout_constraintEnd_toEndOf="@id/etUsername"
+        app:layout_constraintStart_toStartOf="@id/etUsername"
+        app:layout_constraintTop_toBottomOf="@id/etUsername"
+        tools:ignore="LabelFor" />
 
     <EditText
         android:id="@+id/etPassword"
@@ -63,32 +78,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/etUsername"
         app:layout_constraintStart_toStartOf="@id/etUsername"
-        app:layout_constraintTop_toBottomOf="@id/etUsername"
+        app:layout_constraintTop_toBottomOf="@id/etEmail"
         tools:ignore="LabelFor" />
 
     <Button
-        android:id="@+id/btnSignIn"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginTop="25dp"
         android:backgroundTint="@color/orange"
-        android:text="@string/sign_in"
+        android:text="@string/sign_up"
         android:textAllCaps="false"
         android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="@id/etUsername"
         app:layout_constraintStart_toStartOf="@id/etUsername"
         app:layout_constraintTop_toBottomOf="@id/etPassword" />
-
-    <TextView
-        android:id="@+id/btnForgotPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:text="@string/forgot_password"
-        android:textColor="@color/orange"
-        app:layout_constraintTop_toBottomOf="@id/btnSignIn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
         android:id="@+id/tvBottom"
@@ -99,8 +102,8 @@
         android:textColor="@android:color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

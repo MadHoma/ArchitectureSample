@@ -50,7 +50,7 @@ class UserListPresenter : BasePresenter<UserListView>() {
     }
 
     fun openSignIn() {
-        mRouter.navigateTo(Screens.SignInScreen())
+        mRouter.navigateTo(Screens.AuthScreen())
     }
 
     fun load(recyclerView: RecyclerView) {
